@@ -1,22 +1,93 @@
-import React, { ReactNode } from "react";
+"use client";
+import React, { useEffect, useRef, useState } from "react";
 import Container from "@/sharedComponets/ui/wrapper/Container";
-import SiteLogo from "@/sharedComponets/ui/logos/SiteLogo";
+import Link from "next/link";
+import Sidebar from "./Sidebar";
+import SiteLogo from "./SiteLogo";
+import SidebarToggler from "./SidebarToggler";
+import { getLenisInstance } from "@/utils/lenis";
+import { navLinks } from "@/data/navLinks";
 
 
 type Props = {
-    navStyle?:string,
-    contentWrapperStyle?:string,
-    children: ReactNode
-}
-export default function Navbar({ children,contentWrapperStyle='', navStyle="" }:Props) {
+  navStyle?: string;
+};
+
+export default function Navbar({ navStyle = "" }: Props) {
+  // variables
+  const THRESHOLD = 150;
+
+  // hooks
+  const [scrollY, setScrollY] = useState(0);
+  const prevScrollRef = useRef(0);
+
+  useEffect(() => {
+    const lenis = getLenisInstance();
+    if (!lenis) return;
+
+    const handleScroll = () => {
+      const currentScroll = lenis.scroll;
+      const prevScroll = prevScrollRef.current;
+
+      const isScrollingDown = currentScroll > prevScroll;
+      const isScrollingUp = currentScroll < prevScroll;
+
+      // Scrolling down — hide header
+      if (isScrollingDown) {
+        if (currentScroll < THRESHOLD) {
+          setScrollY(currentScroll);
+        }
+
+        if (currentScroll > THRESHOLD && scrollY !== 0) {
+          setScrollY(0);
+        }
+      }
+
+      // Scrolling up and scrollY is greater than 0, reduce scrollY gradually
+      if (isScrollingUp && currentScroll < THRESHOLD && scrollY > 0) {
+        const distanceToTop = Math.max(currentScroll, 0);
+        const newScrollY = Math.max(0, Math.min(THRESHOLD, distanceToTop));
+        setScrollY(newScrollY);
+      }
+
+      prevScrollRef.current = currentScroll;
+    };
+
+    lenis.on("scroll", handleScroll);
+    return () => {
+      lenis.off("scroll", handleScroll);
+    };
+  }, [scrollY]);
+
   return (
-    <div className={`w-full h-auto ${navStyle}`}>
+    <header
+      style={{ transform: `translateY(-${scrollY}px)` }}
+      className={`wt_header fixed top-0 left-0 py-4 md:py-5 lg:py-6 w-full h-auto ${navStyle} ${
+        scrollY === 0 ? "duration-1000" : ""
+      }`}
+    >
       <Container>
-        <div className={`w-full flex items-center  ${contentWrapperStyle}`}>
+        <div className="w-full flex items-center justify-center">
           <SiteLogo />
-          {children}
+
+          {/* links */}
+          <div className="hidden  lg:inline-flex items-center gap-5 md:gap-6 lg:gap-7 xl:gap-8 2xl:gap-10">
+            {navLinks.map(({ href, label }) => (
+              <Link
+                className="uppercase cursor-pointer"
+                key={label}
+                href={href}
+              >
+                {label}
+              </Link>
+            ))}
+          </div>
+
+          <SidebarToggler />
         </div>
       </Container>
-    </div>
+
+      <Sidebar />
+    </header>
   );
 }

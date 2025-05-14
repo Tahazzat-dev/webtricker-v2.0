@@ -23,6 +23,7 @@ export default function Shotcut() {
   )
 }
 
+// const handleClose = ()=>{}
 
 // load data
   // useEffect(() => {

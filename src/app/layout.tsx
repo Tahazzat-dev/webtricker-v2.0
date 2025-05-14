@@ -7,6 +7,7 @@ import ReactToastifyMessage from "@/sharedComponets/DOM/ReactToastifyMessage";
 import { ThemeProvider } from "@/provider/ThemeProvider";
 import DemoThemeToggler from "@/tests/DemoThemeToggler";
 import InitializeAnimationPlugin from "@/sharedComponets/DOM/InitializeAnimationPlugin";
+import BodyScrollController from "@/sharedComponets/DOM/BodyScrollController";
 
 const syne = Syne({
   subsets: ['latin'],
@@ -28,7 +29,7 @@ export default function RootLayout({
   return (
     <html lang="en"> 
       <body
-        className={`wt_fs-base ${syne.className} ${syne.variable}`}
+        className={`z-0 wt_fs-base ${syne.className} ${syne.variable}`}
       >
         <ThemeProvider>
           <ReduxProvider>
@@ -40,6 +41,7 @@ export default function RootLayout({
             {/* ===== portal to show modals ====== */}
             <div className="w-full" id="modal_portal"></div>
             <BodyEventListeners />
+            <BodyScrollController />
             <InitializeAnimationPlugin />
           </ReduxProvider>
         </ThemeProvider>

@@ -11,7 +11,9 @@
   --clr-white: #ffffff;
   --clr-black: #1c1d1e;
   --clr-bg-body: #fff;
+  --clr-bg-body-semi-transparent: #ffffffe3;
   --clr-bg-body-dark: #121212;
+  --clr-bg-body-dark-semi-transparent: #121212d8;
   --clr-text-body: #5d5d63;
   --clr-text-body-dark: #ffffffb3;
   --clr-text-heading: #1e1e1e;
@@ -230,6 +232,20 @@ p {
   line-height: 120%;
 }
 
+
+/* utility */
+.heading{
+  color: var(--clr-black);
+}
+
+button{
+  cursor: pointer;
+}
+
+.dark .heading{
+  color: var(--clr-white);
+}
+
 .wt_fs-xxs {
   font-size: var(--fs-xxs);
 }
@@ -303,18 +319,6 @@ body {
   color: var(--clr-text-body-dark);
 }
 
-/* font sizes 
-190px
-130px
-100px
-70px
-40px
-50px
-30px
-26px
-18px
-*/
-
 /* Button Wrapper */
 .wt_btn_cta {
   @apply relative inline-block overflow-hidden border rounded-full leading-[110%] text-inherit bg-transparent transform transition-transform duration-300 px-8 py-4;
@@ -368,4 +372,55 @@ body {
 
 .wt_btn_cta:hover .wt_btn_cta-title span {
   transform: translateY(-110%);
+}
+
+
+/* ========= header starts ========== */
+.wt_header{
+  background:var(--clr-bg-body-semi-transparent);
+  backdrop-filter: blur(12px);
+}
+
+.dark .wt_header{
+  background:var(--clr-bg-body-dark-semi-transparent);
+}
+
+.tp-header-bar-btn span {
+  @apply w-9 lg:w-10 h-0.5 block my-1.5;
+    background-color: var(--clr-black);
+}
+
+.dark .tp-header-bar-btn span {
+    background-color: var(--clr-white);
+}
+
+.tp-header-bar-btn:hover span {
+  animation: bar_anim 0.8s cubic-bezier(0.44, 1.1, 0.53, 0.99) 1 forwards;
+}
+.tp-header-bar-btn:hover span:last-child {
+animation-delay: 0.1s;
+}
+
+@keyframes bar_anim {
+  0%, 100% {
+    -webkit-clip-path: inset(-2px 0);
+    clip-path: inset(-2px 0);
+  }
+  42% {
+    -webkit-clip-path: inset(-2px 0 -2px 100%);
+    clip-path: inset(-2px 0 -2px 100%);
+  }
+  43% {
+    -webkit-clip-path: inset(-2px 100% -2px 0);
+    clip-path: inset(-2px 100% -2px 0);
+  }
+}
+
+
+.wt_sitebar-container {
+  background-color: var(--clr-bg-body);
+}
+
+.dark .wt_sitebar-container{
+  background-color: var(--clr-bg-body-dark);
 }

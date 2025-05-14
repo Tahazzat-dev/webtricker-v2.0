@@ -1,5 +1,8 @@
 "use client";
-import { SET_EXPAND } from "@/redux/features/rootModyfier/Modyfier";
+import {
+  SET_EXPAND,
+  updatePreventScrolling,
+} from "@/redux/features/rootModyfier/Modyfier";
 import { RootState } from "@/redux/store";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
@@ -20,6 +23,7 @@ const BodyEventListeners = () => {
       }
 
       dispatch(SET_EXPAND(null));
+      dispatch(updatePreventScrolling(false));
     };
 
     document.body.addEventListener("click", handleListeners);
