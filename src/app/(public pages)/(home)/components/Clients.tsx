@@ -33,7 +33,7 @@ export default function Clients() {
             {items.map((item, idx) => (
               <span
                 key={idx}
-                className="text-xl font-medium text-gray-800 px-12 whitespace-nowrap"
+                className="text-xl font-medium px-12 whitespace-nowrap"
               >
                 {item}
               </span>
