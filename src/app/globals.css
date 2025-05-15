@@ -5,7 +5,7 @@
    Root Variables
 =========================== */
 :root {
-  --clr-primary: #ccff00;
+  --clr-primary: #95ff00;
   --clr-danger: #ff0000;
   --clr-warning: #ffe600;
   --clr-white: #ffffff;
@@ -56,6 +56,11 @@
     --spacing-md: 50px;
     --spacing-lg: 61.48px;
     --spacing-xl: 77.16px; */
+}
+
+
+.dark :root {
+  --clr-primary: #ccff00;
 }
 
 /* =====================
@@ -383,6 +388,19 @@ body {
 
 .dark .wt_header{
   background:var(--clr-bg-body-dark-semi-transparent);
+}
+
+.wt_header-navlink{
+  @apply relative;
+}
+
+.wt_header-navlink::before{
+  @apply w-0 duration-300 h-1 block absolute left-0 top-full;
+  content: '';
+  background-color: var(--clr-primary);
+}
+.wt_header-navlink:hover::before{
+  width: 100%;
 }
 
 .tp-header-bar-btn span {

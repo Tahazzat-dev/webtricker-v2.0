@@ -45,13 +45,15 @@ export default function Sidebar() {
         }`}
       >
         <div className="w-full pb-5 flex items-center justify-between px-4 md:px-5  lg:px-8 xl:px-9">
+         <Link href="/">
           <Image
+           onClick={handleClose}
             className="inline w-14"
             src={webtrickerW}
             width={50}
             height={50}
             alt="Site logo"
-          />
+          /></Link>
           <button
             onClick={handleClose}
             className="duration-300 hover:rotate-90 text-black dark:text-white"
