@@ -68,7 +68,7 @@ export default function CursorDot() {
     const handleClick = (e: MouseEvent) => {
       const target = e.target as HTMLElement;
       const ignore = target.closest(
-        'a[target="_blank"], .cursor-hide, [href^="#"], [href^="mailto"], [href^="tel"], .lg-trigger, .tp-btn-disabled a'
+        'a[target="_blank"], .cursor-hide, [href^="#"], [href^="mailto"], [href^="tel"], .lg-trigger, .wt_btn-disabled a'
       );
 
       if (!ignore) {

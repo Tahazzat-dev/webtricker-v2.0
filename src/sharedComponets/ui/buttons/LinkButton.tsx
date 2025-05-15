@@ -16,7 +16,7 @@ export default function LinkButton({
   href,
 }: ButtonProps) {
   return (
-    <Link href={href} className={`wt_btn_cta ${className}`}>
+    <Link href={href} className={`wt_btn-disabled wt_btn_cta ${className}`}>
       <span className="wt_btn_cta-border"></span>
       <span className="wt_btn_cta-ripple">
         <span></span>

@@ -213,28 +213,28 @@ h2 {
 }
 
 h3 {
-  font-size: var(--fs-6xl);
-  line-height: 120%;
-}
-
-h4 {
   font-size: var(--fs-5xl);
   line-height: 120%;
 }
 
-h5 {
+h4 {
   font-size: var(--fs-4xl);
   line-height: 120%;
 }
 
-h6 {
+h5 {
   font-size: var(--fs-2xl);
+  line-height: 120%;
+}
+
+h6 {
+  font-size: var(--fs-xl);
   line-height: 120%;
 }
 
 p {
   font-size: var(--fs-base);
-  line-height: 120%;
+  line-height: 150%;
 }
 
 

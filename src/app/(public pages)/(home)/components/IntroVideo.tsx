@@ -22,7 +22,7 @@ export default function IntroVideo() {
           start: "top top",
           end: "+=100%",
           scrub: true,
-          markers: true,
+        //   markers: true,
           pinSpacing: false,
           pin: pinContainer.current,
         },
@@ -34,7 +34,7 @@ export default function IntroVideo() {
 
   return (
     <section className="py-8 md:py-10 lg:py-14 xl:py-16 2xl:py-18 mt-8 md:mt-10 lg:mt-14 xl:mt-16 2xl:mt-18 relative">
-      <div ref={triggerEl} className="w-full h-[0.1px] bg-red-300"></div>
+      <div ref={triggerEl} className="w-full h-[0.1px]"></div>
       <div
         ref={pinContainer}
         className="w-full "
@@ -50,7 +50,7 @@ export default function IntroVideo() {
           ></video>
         </div>
       </div>
-      <div className="w-full h-screen border border-b-red-400"></div>
+      <div className="w-full h-screen"></div>
     </section>
   );
 }

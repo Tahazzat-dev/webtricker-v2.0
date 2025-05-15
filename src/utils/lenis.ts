@@ -8,7 +8,7 @@ export const initSmoothScroll = () => {
 
   if (!lenisInstance) {
     lenisInstance = new Lenis({
-      duration: 1.2,
+      duration: 1 ,
       smoothWheel: true,
    easing: (t: number) => 1 - Math.pow(1 - t, 3),
     })
