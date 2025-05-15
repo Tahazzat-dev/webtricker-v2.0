@@ -6,7 +6,7 @@ type InitialState = {
 };
 const initialState: InitialState = {
     text: null,
-    showDot: true,
+    showDot: false,
 };
 
 // Create the slice with reducers for individual property changes

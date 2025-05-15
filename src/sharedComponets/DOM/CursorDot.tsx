@@ -1,13 +1,16 @@
 "use client";
+import { toggleShowFloatingDot } from "@/redux/features/dom/floatingDotSlice";
 import { RootState } from "@/redux/store";
 import React, { useEffect, useRef } from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 export default function CursorDot() {
   // hook
+  const dispatch = useDispatch()
   const { text, showDot } = useSelector(
     (state: RootState) => state.floatingText
   );
+  //   const [clientX, setClient]
 
   // ref
   const cursorRef = useRef<HTMLDivElement | null>(null);
@@ -26,33 +29,43 @@ export default function CursorDot() {
       }
     };
 
-    document.addEventListener("mousemove", handleMouseMove);
+    const handleMouseEnter = () => dispatch(toggleShowFloatingDot(true));
+    const handleMouseLeave = () => dispatch(toggleShowFloatingDot(false));
 
+    document.addEventListener("mousemove", handleMouseMove);
+    window.addEventListener("mouseenter", handleMouseEnter);
+    window.addEventListener("mouseleave", handleMouseLeave);
     return () => {
       document.removeEventListener("mousemove", handleMouseMove);
+      window.removeEventListener("mouseenter", handleMouseEnter);
+      window.removeEventListener("mouseleave", handleMouseLeave);
     };
-  }, []);
+  }, [dispatch]);
 
   // Conditional styles
   const dotSizeClass = text
-    ? `${showDot ? "p-3" : ""} w-auto h-auto`
+    ? "w-[100px] h-[100px] flex items-center justify-center p-4 "
     : "w-3 h-3";
   const visibilityClass = showDot
-    ? "opacity-100"
-    : "opacity-0";
+    ? "!scale-100 "
+    : "!scale-0 !w-[0.01px] !h-[0.01px] !p-0";
 
   return (
     <div
+      style={{}}
       ref={cursorRef}
       className={`
-        fixed pointer-events-none top-0 left-0 
-        bg-red-400 rounded-full z-[999999]
-        duration-100 ease-linear 
-        ${dotSizeClass} ${visibilityClass}
+        wt_dot_cursor fixed pointer-events-none top-0 left-0 
+         rounded-full z-[999999]
+        duration-75 ease-linear 
       `}
       id="cursor-dot"
     >
-      {text ? <p>{text}</p> : <></>}
+      <div
+        className={`duration-500 overflow-hidden ${dotSizeClass}  ${visibilityClass}`}
+      >
+        {text ? <p>{text}</p> : <></>}
+      </div>
     </div>
   );
 }

@@ -424,3 +424,12 @@ animation-delay: 0.1s;
 .dark .wt_sitebar-container{
   background-color: var(--clr-bg-body-dark);
 }
+.wt_dot_cursor{
+  color: var(--clr-white);
+  background-color: var(--clr-bg-body-dark);
+}
+
+.dark .wt_dot_cursor{
+  color: var(--clr-black);
+ background-color: var(--clr-bg-body);
+}
