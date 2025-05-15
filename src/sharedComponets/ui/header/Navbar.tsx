@@ -62,7 +62,7 @@ export default function Navbar({ navStyle = "" }: Props) {
   return (
     <header
       style={{ transform: `translateY(-${scrollY}px)` }}
-      className={`wt_header fixed top-0 left-0 py-4 md:py-5 lg:py-6 w-full h-auto ${navStyle} ${
+      className={`z-[999] wt_header fixed top-0 left-0 py-4 md:py-5 lg:py-6 w-full h-auto ${navStyle} ${
         scrollY === 0 ? "duration-1000" : ""
       }`}
     >
@@ -74,7 +74,7 @@ export default function Navbar({ navStyle = "" }: Props) {
           <div className="hidden  lg:inline-flex items-center gap-5 md:gap-6 lg:gap-7 xl:gap-8 2xl:gap-10">
             {navLinks.map(({ href, label }) => (
               <Link
-                className="wt_header-navlink uppercase cursor-pointer"
+                className="wt_header-navlink heading uppercase cursor-pointer"
                 key={label}
                 href={href}
               >

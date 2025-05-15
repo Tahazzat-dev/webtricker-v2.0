@@ -23,6 +23,9 @@ export default function Shotcut() {
   )
 }
 
+//  ===== section padding
+// py-8 md:py-10 lg:py-14 xl:py-16 2xl:py-18
+
 // const handleClose = ()=>{}
 
 // load data

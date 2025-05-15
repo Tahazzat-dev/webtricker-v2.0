@@ -10,19 +10,8 @@ export const initSmoothScroll = () => {
     lenisInstance = new Lenis({
       duration: 1.2,
       smoothWheel: true,
-      easing: (t: number) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+   easing: (t: number) => 1 - Math.pow(1 - t, 3),
     })
-
-    // Ignore scroll on elements with class "scrollable-container"
-    document.addEventListener('wheel', (e) => {
-      const target = e.target as HTMLElement;
-      return;
-  console.log(target)
-      if (target.closest('.sidebar_scrollable_container')) {
-        // Don't let Lenis handle this
-        return;
-      }
-    });
 
     const raf = (time: number) => {
       lenisInstance?.raf(time)

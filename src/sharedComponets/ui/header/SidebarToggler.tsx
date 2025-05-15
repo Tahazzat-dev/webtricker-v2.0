@@ -51,7 +51,7 @@ export default function SidebarToggler() {
     >
       <button
         onClick={handleClick}
-        className="cursor-pointer tp-header-bar-btn"
+        className="cursor-pointer wt_sidebar-toggler"
       >
         <span></span>
         <span></span>
