@@ -11,7 +11,6 @@ export default function CursorDot() {
 
   const ballRef = useRef<HTMLDivElement>(null);
 
-  // Cursor state
   const mouse = useRef({ x: 0, y: 0 });
   const pos = useRef({ x: 0, y: 0 });
   const ratio = 0.15;
@@ -20,29 +19,25 @@ export default function CursorDot() {
   const ballSize = 14;
   const ballScale = 1;
   const ballOpacity = 1;
-  const ballBorderWidth = 1;
 
   useEffect(() => {
     const ball = ballRef.current;
     if (!ball) return;
 
-    // Initial setup
     gsap.set(ball, {
       xPercent: -50,
       yPercent: -50,
       width: ballSize,
       height: ballSize,
-      borderWidth: ballBorderWidth,
       opacity: ballOpacity,
     });
 
-    // Track mouse movement
     const handleMouseMove = (e: MouseEvent) => {
       mouse.current.x = e.clientX;
       mouse.current.y = e.clientY;
 
-      // Show cursor on move
-      gsap.to(ball, { duration: 0.3, autoAlpha: 1 });
+      // Snappy opacity fade-in
+      gsap.to(ball, { duration: 0.07, autoAlpha: 1 });
       dispatch(toggleShowFloatingDot(true));
     };
 
@@ -51,17 +46,18 @@ export default function CursorDot() {
         pos.current.x += (mouse.current.x - pos.current.x) * ratio;
         pos.current.y += (mouse.current.y - pos.current.y) * ratio;
 
+        // Quick, smooth movement
         gsap.set(ball, { x: pos.current.x, y: pos.current.y });
       }
     };
 
     const handleMouseEnter = () => {
-      gsap.to(ball, { duration: 0.3, autoAlpha: 1 });
+      gsap.to(ball, { duration: 0.2, autoAlpha: 1 });
       dispatch(toggleShowFloatingDot(true));
     };
 
     const handleMouseLeave = () => {
-      gsap.to(ball, { duration: 0.3, autoAlpha: 0 });
+      gsap.to(ball, { duration: 0.2, autoAlpha: 0 });
       dispatch(toggleShowFloatingDot(false));
     };
 
@@ -87,11 +83,9 @@ export default function CursorDot() {
     document.addEventListener("mousemove", handleMouseMove);
     document.addEventListener("mouseleave", handleMouseLeave);
     document.addEventListener("mouseenter", handleMouseEnter);
-
     document.addEventListener("click", handleClick);
     gsap.ticker.add(updatePosition);
 
-    // Handle cursor hide on hover (similar to jQuery logic)
     const interactiveSelectors = [
       "a:not(.cursor-hide)",
       "button:not(.cursor-hide)",
@@ -119,17 +113,41 @@ export default function CursorDot() {
     };
   }, [dispatch]);
 
+  // Animate cursor dot size on text change
+  useEffect(() => {
+    const ball = ballRef.current;
+    if (!ball) return;
+
+    if (text) {
+      gsap.to(ball, {
+        duration: 0.3,
+        width: 90,
+        height: 90,
+        ease: "power2.out",
+      });
+    } else {
+      gsap.to(ball, {
+        duration: 0.3, 
+        width: ballSize,
+        height: ballSize,
+        ease: "power2.out",
+      });
+    }
+  }, [text]);
+
   return (
     <div
       id="magic-cursor"
       ref={ballRef}
-      className={`wt_dot_cursor fixed pointer-events-none top-0 left-0 rounded-full z-[999999] border border-white bg-transparent duration-75 ease-linear ${
-        text ? "!w-[100px] !h-[100px] flex items-center justify-center p-4" : ""
+      className={`duration-75 fixed pointer-events-none top-0 left-0 rounded-full z-[999999] ease-linear ${
+        text ? "flex items-center justify-center p-4 !bg-white" : "!bg-black dark:!bg-white"
       }`}
     >
       {text && (
-        <div className="overflow-hidden min-w-full min-h-full flex items-center justify-center text-xs text-white whitespace-nowrap">
-          <p>{text}</p>
+        <div className="overflow-hidden min-w-full min-h-full flex items-center justify-center ">
+          <span className="!text-black text-center !text-xxs !leading-[120%]">
+            {text}
+          </span>
         </div>
       )}
     </div>

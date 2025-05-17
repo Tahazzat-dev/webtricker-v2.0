@@ -7,6 +7,8 @@ import Banner from "./components/Banner";
 import Clients from "./components/Clients";
 import IntroVideo from "./components/IntroVideo";
 import Services from "./components/Services";
+import LargeMarquee from "./components/LargeMarquee";
+import Portfolios from "./components/Portfolios";
 
 export default function Home() {
   return (
@@ -18,6 +20,10 @@ export default function Home() {
       </Container>
       <Clients />
       <Services />
+      <LargeMarquee />
+      <Portfolios />
+
+      <div className="w-full h-screen"></div>
     </main>
   );
 }
