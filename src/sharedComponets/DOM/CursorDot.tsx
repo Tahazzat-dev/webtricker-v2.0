@@ -16,7 +16,7 @@ export default function CursorDot() {
   const ratio = 0.15;
   const active = useRef(false);
 
-  const ballSize = 14;
+  const ballSize = 16;
   const ballScale = 1;
   const ballOpacity = 1;
 
@@ -68,7 +68,7 @@ export default function CursorDot() {
       );
 
       if (!ignore) {
-        gsap.to(ball, { duration: 0.3, scale: 1.3, autoAlpha: 0 });
+        gsap.to(ball, { duration: 0.3, scale: 1, autoAlpha: 0 });
       }
     };
 
@@ -145,7 +145,7 @@ export default function CursorDot() {
     >
       {text && (
         <div className="overflow-hidden min-w-full min-h-full flex items-center justify-center ">
-          <span className="!text-black text-center !text-xxs !leading-[120%]">
+          <span style={{fontSize:'14px'}} className="!text-black text-center !leading-[120%]">
             {text}
           </span>
         </div>

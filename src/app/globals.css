@@ -246,6 +246,16 @@ p {
 button{
   cursor: pointer;
 }
+section{
+ background-color: var(--clr-bg-body);
+}
+
+.section-inner-speacing{
+  @apply pt-10 xl:pt-12 2xl:pt-14;
+}
+.dark section{
+ background-color: var(--clr-bg-body-dark);
+}
 
 .dark .heading{
   color: var(--clr-white);

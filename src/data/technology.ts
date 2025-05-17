@@ -1,0 +1,80 @@
+import { TTechnology } from "@/types/data";
+
+export const technologies:TTechnology[] = [
+    {
+        name:'HTML5',
+        src:'/icons/home/html.svg'
+    },
+    {
+        name:'CSS3',
+        src:'/icons/home/css.svg'
+    },
+    {
+        name:"SCSS",
+        src:"/icons/home/sass.svg"
+    },
+    {
+        name:"BOOTSTRAP",
+        src:"/icons/home/bootstrap.svg"
+    },
+    {
+        name:"TAILWIND CSS",
+        src:"/icons/home/tailwindcss.svg"
+    },
+    {
+        name:"JAVASCRIPT",
+        src:"/icons/home/js-svgrept.svg"
+    },
+    {
+        name:"JQUERY",
+        src:"/icons/home/jquery.svg"
+    },
+    {
+        name:"REACT",
+        src:"/icons/home/react.svg"
+    },
+    {
+        name:"NEXT",
+        src:"/icons/home/Next.js.webp"
+    },
+    {
+        name:"NODE",
+        src:"/icons/home/node.js.webp"
+    },
+    {
+        name:"PHP",
+        src:"/icons/home/php.webp"
+    },
+    {
+        name:"WORDPRESS",
+        src:"/icons/home/wordpress.svg"
+    },
+    {
+        name:"SHOPIFY",
+        src:"/icons/home/shopify.svg"
+    },
+    {
+        name:"LARAVEL",
+        src:"/icons/home/laravel.svg"
+    },
+    {
+        name:"AFTER EFFECT",
+        src:"/icons/home/after-effects.svg"
+    },
+    {
+        name:"UX/UI",
+        src:"/icons/home/ux-ui.webp"
+    },
+    {
+        name:"GSAP",
+        src:"/icons/home/gsap.svg"
+    },
+    {
+        name:"APP DEVELOPMENT",
+        src:"/icons/home/apps-development.webp"
+    },
+    {
+        name:"LOGO DESIGN",
+        src:"/icons/home/logo-design.webp"
+    }
+]

@@ -40,7 +40,7 @@ export default function Sidebar() {
 
       {/* sidebar links and social info */}
       <div
-        className={`wt_sitebar-container duration-500 flex flex-col py-4 md:py-5 lg:py-6 w-full  sm:max-w-[450px] h-full relative ${
+        className={`wt_sitebar-container duration-500 flex flex-col py-4 w-full  sm:max-w-[450px] h-full relative ${
           active ? "translate-x-0" : "translate-x-full"
         }`}
       >

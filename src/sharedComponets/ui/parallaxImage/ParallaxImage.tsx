@@ -69,7 +69,7 @@ export default function ParallaxImage({
       onMouseOverCapture={() => toggleShowText("View Demo")}
       onMouseLeave={() => toggleShowText(null)}
       href={href}
-      className="cursor-hide inline w-auto"
+      className="cursor-hide inline w-full sm:w-auto"
     >
       <div className={`w-full overflow-hidden ${containerStyle}`}>
         <div

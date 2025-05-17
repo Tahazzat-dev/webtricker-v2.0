@@ -19,6 +19,7 @@ export default function Navbar({ navStyle = "" }: Props) {
 
   // hooks
   const [scrollY, setScrollY] = useState(0);
+  const [showBorder, setShowBorder] = useState(false);
   const prevScrollRef = useRef(0);
 
   useEffect(() => {
@@ -28,6 +29,13 @@ export default function Navbar({ navStyle = "" }: Props) {
     const handleScroll = () => {
       const currentScroll = lenis.scroll;
       const prevScroll = prevScrollRef.current;
+
+      // set the border
+      if(prevScrollRef.current > 50 && !showBorder){
+        setShowBorder(true)
+      }else{
+        setShowBorder(false)
+      }
 
       const isScrollingDown = currentScroll > prevScroll;
       const isScrollingUp = currentScroll < prevScroll;
@@ -57,14 +65,14 @@ export default function Navbar({ navStyle = "" }: Props) {
     return () => {
       lenis.off("scroll", handleScroll);
     };
-  }, [scrollY]);
-
+  }, [scrollY])
+  console.log(showBorder, ' from show border');
   return (
     <header
       style={{ transform: `translateY(-${scrollY}px)` }}
-      className={`z-[999] wt_header fixed top-0 left-0 py-4 md:py-5 lg:py-6 w-full h-auto ${navStyle} ${
+      className={`z-[999] wt_header fixed top-0 left-0 py-4 w-full h-auto ${navStyle} ${
         scrollY === 0 ? "duration-1000" : ""
-      }`}
+      } ${showBorder ? "shadow":'border-0'}`}
     >
       <Container>
         <div className="w-full flex items-center justify-center">

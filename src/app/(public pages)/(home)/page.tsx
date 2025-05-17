@@ -9,6 +9,7 @@ import IntroVideo from "./components/IntroVideo";
 import Services from "./components/Services";
 import LargeMarquee from "./components/LargeMarquee";
 import Portfolios from "./components/Portfolios";
+import TeamBanner from "./components/TeamBanner";
 
 export default function Home() {
   return (
@@ -22,8 +23,8 @@ export default function Home() {
       <Services />
       <LargeMarquee />
       <Portfolios />
-
-      <div className="w-full h-screen"></div>
+      <TeamBanner />
+      {/* <div className="w-full h-screen bg-red-200"></div> */}
     </main>
   );
 }
