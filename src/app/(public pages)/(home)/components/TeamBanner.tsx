@@ -74,13 +74,13 @@ export default function TeamBanner() {
       >
         <Container>
           <h2 className="heading inline !leading-[100%]">Technology</h2>
-          <div className="w-full flex flex-nowrap items-end gap-2">
+          <div className="w-full flex flex-wrap md:flex-nowrap items-end gap-2">
             <h2
               className={`heading !leading-[100%] ${galleryModern.className}`}
             >
               Mastery
             </h2>
-            <h6 className="mb-4 heading">That Delivers Results</h6>
+            <h6 className="mb-2 md:mb-4 heading">That Delivers Results</h6>
           </div>
 
           <div className="section-inner-speacing w-full grid grid-cols-[repeat(auto-fill,minmax(150px,1fr))] md:grid-cols-[repeat(auto-fill,minmax(200px,1fr))] gap-5 gap-y-10 md:gap-12 2xl:gap-20">

@@ -18,11 +18,18 @@ export default function Banner() {
           </span>
           <div className="hidden z-0 sm:inline mt-2 md:mt-4 2xl:mt-10">
             <Image
-              className="inline banner-spinning-star w-5 md:w-6 lg:w-8 2xl:!w-10"
+              className="inline dark:hidden banner-spinning-star w-5 md:w-6 lg:w-8 2xl:!w-10"
               width={40}
               height={40}
-              src="http://liko.foxthemes.me/wp-content/uploads/2024/06/hero-shape-1-1.png"
-              alt="Star icon"
+              src="/images/home/hero-shape-1-1-black.webp"
+              alt="Star"
+            />
+            <Image
+              className="hidden dark:inline banner-spinning-star w-5 md:w-6 lg:w-8 2xl:!w-10"
+              width={40}
+              height={40}
+              src="/images/home/hero-shape-star-white.png"
+              alt="Star"
             />
           </div>
         </div>

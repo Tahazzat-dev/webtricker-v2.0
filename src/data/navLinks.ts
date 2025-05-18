@@ -8,6 +8,6 @@ export const navLinks: TLink[] = [
   { label: "Services", href: "/services" },
   { label: "Portfolio", href: "/portfolio" },
   { label: "Blog", href: "/blog" },
-  { label: "Career", href: "/career" },
+  // { label: "Career", href: "/career" },
   { label: "Contact", href: "/contact" },
 ];

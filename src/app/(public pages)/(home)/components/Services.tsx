@@ -34,13 +34,13 @@ export default function Services() {
         <div className="w-full flex-col md:flex-row gap-10 sm:gap-16 md:gap-10 flex justify-between">
           <div className="w-full">
             <h2 className="heading inline !leading-[100%]">Thoughtful</h2>
-            <div className="w-full flex flex-nowrap items-end gap-2">
+            <div className="w-full flex flex-wrap lg:flex-nowrap items-end gap-2">
               <h2
                 className={`heading !leading-[100%] ${galleryModern.className}`}
               >
                 Process
               </h2>
-              <h6 className="mb-4 heading">We Think a lot</h6>
+              <h6 className="mb-2 md:mb-4 heading">We Think a lot</h6>
             </div>
             <LinkButton
               className="mt-5"

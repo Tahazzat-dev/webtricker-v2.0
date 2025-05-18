@@ -15,7 +15,7 @@ const BouncingText: React.FC<BouncingTextProps> = ({
   size="wt_fs-5xl",
 }) => {
   return (
-     <div className="inline-block bouncing-text-wrapper bold-text-reverse">
+     <div className="inline-block bouncing-text-wrapper bold">
          <p className={`bouncing-text font-semibold text-center ${size}` }>
         {text.split("").map((char:string, index) => (
           <span

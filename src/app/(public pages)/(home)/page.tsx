@@ -12,15 +12,13 @@ import LargeMarquee from "./components/LargeMarquee";
 import Portfolios from "./components/Portfolios";
 import TeamBanner from "./components/TeamBanner";
 import Testimonials from "./components/Testimonials";
-import HoverEffectMoveable from "@/sharedComponets/ui/effects/HoverEffectMoveable";
 import TeamInfo from "./components/TeamInfo";
 import LatestBlogs from "./components/LatestBlogs";
-import BouncingText from "@/sharedComponets/ui/effects/BouncingText";
 
 export default function Home() {
   return (
     <main className="w-full z-0">
-      {/* <Banner />
+      <Banner />
       <IntroVideo />
       <Container>
         <div className="my-8 md:my-10 w-full border-b border-slate-200 dark:border-slate-800"></div>
@@ -31,11 +29,8 @@ export default function Home() {
       <Portfolios />
       <TeamBanner />
       <Testimonials />
-      <TeamInfo /> */}
+      <TeamInfo />
       <LatestBlogs />
-      <div className="w-full h-screen  p-40 bg-slate-500">
-        <BouncingText text="Contact Us" interval={100} duration={4} />
-      </div>
     </main>
   );
 }

@@ -89,7 +89,8 @@ export default function CursorDot() {
     const interactiveSelectors = [
       "a:not(.cursor-hide)",
       "button:not(.cursor-hide)",
-      "[data-liko-hide-cursor]",
+      "input:not(.cursor-hide)",
+      "[data-wt-hide-cursor]",
     ];
     interactiveSelectors.forEach((selector) => {
       document.querySelectorAll(selector).forEach((el) => {
