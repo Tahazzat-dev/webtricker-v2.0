@@ -2,8 +2,9 @@
 import Image from "next/image";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
-import webtrickerDark from "@/assets/images/home/webtricker-logo.svg";
-import webtrickerWhite from "@/assets/images/home/webtricker-white.svg";
+// import webtrickerDark from "@/assets/images/home/webtricker-logo.svg";
+// import webtrickerWhite from "@/assets/images/home/webtricker-white.svg";
+import webtrickerW from "@/assets/images/home/webtricker-w.png";
 import { getLenisInstance } from "@/utils/lenis";
 
 export default function SiteLogo() {
@@ -40,8 +41,8 @@ export default function SiteLogo() {
  
 
   return (
-    <Link href="/" className={`duration-1000 w-full ${expandStyle}`}>
-      <Image
+    <Link href="/" className={`flex items-center gap-1 bold duration-1000 w-full ${expandStyle}`}>
+      {/* <Image
         className="inline dark:hidden w-[160px] md:w-[180px] lg:w-[190px] xl:w-[200px] h-auto"
         src={webtrickerDark}
         width={282}
@@ -54,7 +55,15 @@ export default function SiteLogo() {
         width={282}
         height={74}
         alt="Site logo"
-      />
+      /> */}
+              <Image
+                className="inline w-14"
+                src={webtrickerW}
+                width={50}
+                height={50}
+                alt="Site logo"
+              />
+              <h5>Webtricker</h5>
     </Link>
   );
 }
