@@ -10,11 +10,12 @@ import Services from "./components/Services";
 import LargeMarquee from "./components/LargeMarquee";
 import Portfolios from "./components/Portfolios";
 import TeamBanner from "./components/TeamBanner";
+import Testimonials from "./components/Testimonials";
 
 export default function Home() {
   return (
     <main className="w-full z-0">
-      <Banner />
+      {/* <Banner />
       <IntroVideo />
       <Container>
         <div className="my-8 md:my-10 w-full border-b border-slate-200 dark:border-slate-800"></div>
@@ -23,8 +24,9 @@ export default function Home() {
       <Services />
       <LargeMarquee />
       <Portfolios />
-      <TeamBanner />
-      {/* <div className="w-full h-screen bg-red-200"></div> */}
+      <TeamBanner /> */}
+      <Testimonials />
+      <div className="w-full h-screen bg-red-200"></div>
     </main>
   );
 }
