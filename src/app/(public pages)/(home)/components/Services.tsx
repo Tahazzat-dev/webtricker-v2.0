@@ -40,7 +40,7 @@ export default function Services() {
               >
                 Process
               </h2>
-              <p className="mb-4">We Think a lot</p>
+              <h6 className="mb-4 heading">We Think a lot</h6>
             </div>
             <LinkButton
               className="mt-5"

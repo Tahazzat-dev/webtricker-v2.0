@@ -54,7 +54,7 @@ export default function Portfolios() {
               key="https://liko.foxthemes.me/wp-content/uploads/2024/06/project-1-3.jpg"
             />
           </div>
-          <div className="sm:mt-10 md:mt-20 lg:mt-[80px] 2xl:mt-[160px] flex 2xl:pt-20 justify-end w-full sm:w-[45%] 2xl:w-[47%] max-w-[800px] h-auto">
+          <div className="sm:mt-10 md:mt-20 lg:mt-[80px] 2xl:mt-[160px] flex items-start 2xl:pt-20 justify-end w-full sm:w-[45%] 2xl:w-[47%] max-w-[800px] h-auto">
             <ParallaxImage
               containerStyle="w-full h-[382px] lg:h-[449px] max-w-[700px]"
               href=""

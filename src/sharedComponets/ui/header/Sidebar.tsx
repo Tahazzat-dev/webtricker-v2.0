@@ -88,28 +88,28 @@ export default function Sidebar() {
           </div>
           <div className=" w-full hidden lg:flex  gap-3 mt-20">
             <Image
-              className="inline w-full"
+              className="inline w-full rounded-[5px]"
               src="https://liko.foxthemes.me/wp-content/uploads/2024/06/offcanvas-1.jpg"
               width={50}
               height={50}
               alt="Site logo"
             />
             <Image
-              className="inline w-full"
+              className="inline w-full rounded-[5px]"
               src="https://liko.foxthemes.me/wp-content/uploads/2024/06/offcanvas-2.jpg"
               width={50}
               height={50}
               alt="Site logo"
             />
             <Image
-              className="inline w-full"
+              className="inline w-full rounded-[5px]"
               src="https://liko.foxthemes.me/wp-content/uploads/2024/06/offcanvas-3.jpg"
               width={50}
               height={50}
               alt="Site logo"
             />
             <Image
-              className="inline w-full"
+              className="inline w-full rounded-[5px]"
               src="https://liko.foxthemes.me/wp-content/uploads/2024/06/offcanvas-4.jpg"
               width={50}
               height={50}

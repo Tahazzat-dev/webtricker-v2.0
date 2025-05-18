@@ -7,19 +7,29 @@ import galleryModern from "@/app/fonts/gallery";
 import Container from "@/sharedComponets/ui/wrapper/Container";
 import { TTechnology } from "@/types/data";
 import { technologies } from "@/data/technology";
+import HoverEffectMoveable from "@/sharedComponets/ui/effects/HoverEffectMoveable";
 
 const TechnologyCard = ({ technology }: { technology: TTechnology }) => {
   return (
-    <div className="w-full flex flex-col items-center justify-center ">
-      <Image
-        className="h-auto w-[60px]"
-        src={technology.src}
-        width={60}
-        height={60}
-        alt="Technology icon"
-      />
-      <p className={`font-bold mt-4 tracking-wider ${galleryModern.className}`}>{technology.name}</p>
-    </div>
+    <HoverEffectMoveable
+    moveAmount={20}
+    className=""
+    >
+      <div className="w-full flex flex-col items-center justify-center ">
+        <Image
+          className="h-auto w-[60px]"
+          src={technology.src}
+          width={60}
+          height={60}
+          alt="Technology icon"
+        />
+        <p
+          className={`font-bold mt-4 tracking-wider ${galleryModern.className}`}
+        >
+          {technology.name}
+        </p>
+      </div>
+    </HoverEffectMoveable>
   );
 };
 
@@ -70,7 +80,7 @@ export default function TeamBanner() {
             >
               Mastery
             </h2>
-            <p className="mb-4">That Delivers Results</p>
+            <h6 className="mb-4 heading">That Delivers Results</h6>
           </div>
 
           <div className="section-inner-speacing w-full grid grid-cols-[repeat(auto-fill,minmax(150px,1fr))] md:grid-cols-[repeat(auto-fill,minmax(200px,1fr))] gap-5 gap-y-10 md:gap-12 2xl:gap-20">

@@ -239,9 +239,7 @@ p {
 
 
 /* utility */
-.heading{
-  color: var(--clr-black);
-}
+
 
 button{
   cursor: pointer;
@@ -257,7 +255,11 @@ section{
  background-color: var(--clr-bg-body-dark);
 }
 
-.dark .heading{
+
+.heading,.bold{
+  color: var(--clr-black);
+}
+.dark .heading,.dark .bold{
   color: var(--clr-white);
 }
 

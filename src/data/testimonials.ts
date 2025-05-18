@@ -51,14 +51,6 @@ export const testimonials: TTestimonial[] = [
     }
     ,
     {
-        image: "/images/home/MotokiAoki.png",
-        name: "Motoki Aoki",
-        role: "Chief Executive Officer",
-        description: `Very easy to work with, their quick and high quality work amazed me. This was my first time working with him, will plan to work with him for next task too!`,
-        id: uuid()+'' || ''
-    }
-    ,
-    {
         image: "/images/home/AriTeman.png",
         name: " Ari Teman",
         role: "CEO and founder of Friend or Fraud",
