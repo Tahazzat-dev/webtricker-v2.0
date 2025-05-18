@@ -15,6 +15,7 @@ import Testimonials from "./components/Testimonials";
 import HoverEffectMoveable from "@/sharedComponets/ui/effects/HoverEffectMoveable";
 import TeamInfo from "./components/TeamInfo";
 import LatestBlogs from "./components/LatestBlogs";
+import BouncingText from "@/sharedComponets/ui/effects/BouncingText";
 
 export default function Home() {
   return (
@@ -29,13 +30,11 @@ export default function Home() {
       <LargeMarquee />
       <Portfolios />
       <TeamBanner />
-      <Testimonials /> */}
-      <TeamInfo />
+      <Testimonials />
+      <TeamInfo /> */}
       <LatestBlogs />
-      <div className="w-full h-screen bg-red-200 p-40">
-        <HoverEffectMoveable >
-          <div className="min-w-40 min-h-20 bg-white flex items-center justify-center">some text </div>
-        </HoverEffectMoveable>
+      <div className="w-full h-screen  p-40 bg-slate-500">
+        <BouncingText text="Contact Us" interval={100} duration={4} />
       </div>
     </main>
   );
