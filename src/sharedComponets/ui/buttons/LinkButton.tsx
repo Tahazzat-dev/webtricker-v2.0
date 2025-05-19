@@ -13,7 +13,7 @@ export default function LinkButton({
   label,
   labelStyle = "",
   className='',
-  href,
+  href
 }: ButtonProps) {
   return (
     <Link href={href} className={`wt_btn-disabled wt_btn_cta ${className}`}>

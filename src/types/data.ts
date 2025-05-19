@@ -25,3 +25,13 @@ export type TBlog = {
     date: string;
     id: string;
 }
+
+export type TService = {
+    title: string;
+    description: string;
+    excerpt: string;
+    thumnail: string;
+    relatedWork: string[];
+    id: string;
+    parmalink: string;
+}
