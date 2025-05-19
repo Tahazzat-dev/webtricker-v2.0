@@ -1,4 +1,5 @@
 import { RootState } from '@/redux/store'
+import Image from 'next/image';
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 // import bannerImg from "@/assets/"
@@ -17,6 +18,7 @@ export default function Shotcut() {
     <div>
 
 <div className="grid dark:bg-[#1c1d1e] grid-cols-[repeat(auto-fill,minmax(300px,1fr))] gap-4 shadow-[0px_1px_4px_0px_rgba(0,0,0,0.25)] dark:shadow-[0px_1px_4px_0px_rgba(255,255,255,0.2)]">
+  <Image src="/public/images/services/service-marketing-white-icon.png" width={300} height={400} alt="" />
 </div>
 
     </div>
@@ -61,10 +63,13 @@ export default function Shotcut() {
     //   )
     // }
 
+    
 
     /*
     <Image src="" width={} height={} alt="" />
     */
+
+    // components
 
 
     // useEffect(()=>{},[])

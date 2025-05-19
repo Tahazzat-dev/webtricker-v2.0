@@ -9,7 +9,7 @@ export default function NewsLetterForm() {
        onFocus={()=>setIsFocused(true)}
        onBlur={()=>setIsFocused(false)}
         type="email"
-        className="py-2 px-2.5 2xl:px-3.5 outline-none focus:outline-none border-none grow"
+        className="py-2 px-2.5  2xl:px-3.5 outline-none focus:outline-none border-none grow"
         placeholder="Enter your email"
       />
       <button className="px-3.5 bg-slate-700 duration-300 hover:bg-slate-900 dark:bg-slate-300 dark:hover:bg-slate-100 text-white dark:text-black">
