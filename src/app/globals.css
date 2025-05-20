@@ -241,6 +241,10 @@ p {
 button {
   cursor: pointer;
 }
+
+.btn-reverse-bg{
+  @apply duration-300 bg-slate-800 hover:bg-black dark:bg-slate-200 dark:hover:bg-white text-white dark:text-black;
+}
 section {
   background-color: var(--clr-bg-body);
 }
@@ -375,7 +379,7 @@ body {
 
 .wt_btn_cta-title span:after {
   content: attr(data-text);
-  @apply absolute block top-[110%] left-0 text-white dark:text-black;
+  @apply absolute block top-[110%] w-full left-0 text-white dark:text-black;
 }
 .dark .wt_btn_cta-title span:after {
   color: black !important;
