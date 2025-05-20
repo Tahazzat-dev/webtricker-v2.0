@@ -1,5 +1,6 @@
 "use client";
 import React from "react";
+// import { GoogleReCaptcha } from "react-google-recaptcha-v3";
 import { useForm } from "react-hook-form";
 
 type FormData = {
@@ -24,6 +25,7 @@ export default function ContactForm() {
     console.log(data);
     reset()
   });
+
   return (
     <form onSubmit={onSubmit} className="w-full flex flex-col gap-5">
       {/* ======= input === */}
@@ -33,7 +35,7 @@ export default function ContactForm() {
         </label>
         <input
           data-wt-hide-cursor
-          className="cursor-hide block wt_fs-md w-full py-1.5 mt-1.5 px-4 rounded-[4px] outline-none border border-slate-300 dark:border-slate-700"
+          className="cursor-hide block wt_fs-md w-full py-1.5 mt-1.5 px-4 rounded-[4px] outline-none duration-200 border border-slate-300 focus:border-slate-500 dark:focus:border-slate-300 dark:border-slate-700"
           id="contactName"
           type="text"
           placeholder="John Doe"
@@ -50,7 +52,7 @@ export default function ContactForm() {
         <label htmlFor="contactEmail">Email</label>
         <input
           data-wt-hide-cursor
-          className="cursor-hide block wt_fs-md w-full py-1.5 mt-1.5 px-4 rounded-[4px] outline-none border border-slate-300 dark:border-slate-700"
+          className="cursor-hide block wt_fs-md w-full py-1.5 mt-1.5 px-4 rounded-[4px] outline-none duration-200 border border-slate-300 focus:border-slate-500 dark:focus:border-slate-300 dark:border-slate-700"
           type="text"
           id="contactEmail"
           placeholder="example@gmail.com"
@@ -75,7 +77,7 @@ export default function ContactForm() {
           data-wt-hide-cursor
           id="contactMessage"
           placeholder="Enter your message"
-          className="cursor-hide min-h-[100px] block wt_fs-md w-full py-1.5 mt-1.5 px-4 rounded-[4px] outline-none border border-slate-300 dark:border-slate-700"
+          className="cursor-hide min-h-[100px] block wt_fs-md w-full py-1.5 mt-1.5 px-4 rounded-[4px] outline-none duration-200 border border-slate-300 focus:border-slate-500 dark:focus:border-slate-300 dark:border-slate-700"
           {...register("message", { required: "Message is required" })}
         ></textarea>
         {errors?.message ? (
@@ -84,6 +86,12 @@ export default function ContactForm() {
           <></>
         )}
       </div>
+      {/* <div className="w-full">
+        <GoogleReCaptcha
+                sitekey="6LcWnpgpAAAAAAy0KdI38kGohvMEvWib_SwxzBnX"
+                onChange={onChange}
+              />
+      </div> */}
       <div className="w-full">
         <button
           data-wt-hide-cursor

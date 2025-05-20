@@ -242,7 +242,11 @@ button {
   cursor: pointer;
 }
 
-.btn-reverse-bg{
+.wt_text-shadow {
+  text-shadow: 20px 20px 100px rgba(0, 0, 0, 0.9);
+}
+
+.btn-reverse-bg {
   @apply duration-300 bg-slate-800 hover:bg-black dark:bg-slate-200 dark:hover:bg-white text-white dark:text-black;
 }
 section {
@@ -563,4 +567,33 @@ p.bouncing-text {
     opacity: 1;
     text-shadow: 1px 2px 5px var(--bounching-shadow);
   }
+}
+
+/* ======= portfolios ======= */
+.wt_portfolio-card::before,
+.wt_portfolio-card::after {
+  content: "";
+  width: 40px;
+  height: 103%;
+  background: var(--clr-bg-body);
+  position: absolute;
+  top: -1.5%;
+  z-index: 10;
+  border-radius: 100%;
+  -webkit-border-radius: 100%;
+  -moz-border-radius: 100%;
+  -ms-border-radius: 100%;
+  -o-border-radius: 100%;
+}
+
+.wt_portfolio-card::before {
+  left: -20px;
+}
+.wt_portfolio-card::after {
+  right: -20px;
+}
+
+.dark .wt_portfolio-card::before,
+.dark .wt_portfolio-card::after {
+  background: var(--clr-bg-body-dark);
 }
