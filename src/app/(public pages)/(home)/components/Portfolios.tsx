@@ -1,5 +1,5 @@
 import LinkButton from "@/sharedComponets/ui/buttons/LinkButton";
-import ParallaxImage from "@/sharedComponets/ui/parallaxImage/ParallaxImage";
+import ParallaxImage from "@/sharedComponets/ui/parallaxImage/ParallaxLinkImage";
 import Container from "@/sharedComponets/ui/wrapper/Container";
 import React from "react";
 
