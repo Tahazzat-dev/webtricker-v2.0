@@ -28,6 +28,10 @@ export default function PortfolioPage() {
         </video>
       </section>
       <PortfolioShowcase />
+       <Container className="w-full flex flex-col">
+            <p className="bold text-center mb-2 lg:mb-0">DIGITAL DESIGN EXPERIENCE CREATIVE STUDIO</p>
+          <h2 className="wt_fs-big text-center heading">GET IN TOUCH</h2>
+        </Container>
     </main>
   );
 }

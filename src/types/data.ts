@@ -35,3 +35,12 @@ export type TService = {
     id: string;
     parmalink: string;
 }
+
+
+export type TPortFolioSlider = {
+  id:string;
+  title: string;
+  subTitle: string;
+  href: string;
+  img:string;
+}
