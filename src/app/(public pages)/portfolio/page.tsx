@@ -9,11 +9,10 @@ export default function PortfolioPage() {
         <Container className="flex items-center justify-center">
           <div className="w-full max-w-[1000px] text-center bg-slate-800/30 rounded-[10px]">
             <h1 className="!text-white wt_text-shadow wt_fs-7xl font-medium heading !leading-[100%]">
-              A full-service digital innovation partner
+              Portfolio
             </h1>
             <p className="!text-white wt_text-shadow wt_fs-xl bold mt-5">
-              Our rich design and technology expertise delivers top brands and
-              digital experiences Services list
+              Explore our portfolio of responsive web design & development projects.
             </p>
           </div>
         </Container>

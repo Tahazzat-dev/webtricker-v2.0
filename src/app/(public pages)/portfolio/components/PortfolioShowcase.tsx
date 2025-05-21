@@ -94,6 +94,7 @@ export default function PortfolioShowcase() {
           scrollTrigger: {
             trigger: el,
             start: "top 66%",
+            toggleActions: "play none none reverse",
           },
         }
       );
