@@ -7,7 +7,7 @@ export default function PortfolioPage() {
     <main className="w-full z-0">
       <section className={`w-full min-h-screen z-0 flex relative`}>
         <Container className="flex items-center justify-center">
-          <div className="w-full max-w-[1000px] text-center bg-slate-800/30 rounded-[10px]">
+          <div className="w-full max-w-[1000px] text-center bg-slate-800/30 rounded-[10px] p-2">
             <h1 className="!text-white wt_text-shadow wt_fs-7xl font-medium heading !leading-[100%]">
               Portfolio
             </h1>

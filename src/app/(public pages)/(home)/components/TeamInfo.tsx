@@ -23,6 +23,7 @@ export default function TeamInfo() {
       scrollTrigger: {
         trigger: containerRef.current,
         start: "top bottom",
+        // markers:true,
       },
     });
   }, [containerRef]);

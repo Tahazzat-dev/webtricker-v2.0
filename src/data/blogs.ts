@@ -1,4 +1,4 @@
-import { TBlog } from "@/types/data"
+import { TBlog } from "@/types/data" 
 import { v4 as uuid } from "uuid"
 export const latestBlogs: TBlog[] = [
     {
@@ -30,3 +30,4 @@ export const latestBlogs: TBlog[] = [
         id: uuid()
     }
 ]
+

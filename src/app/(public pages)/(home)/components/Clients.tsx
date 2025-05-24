@@ -2,19 +2,9 @@
 import React from "react";
 import Marquee from "react-fast-marquee";
 import Container from "@/sharedComponets/ui/wrapper/Container";
+import Image from "next/image";
+import { testimonials } from "@/data/testimonials";
 
-const items = [
-  "Client 1",
-  "Client 2",
-  "Client 3",
-  "Client 4",
-  "Client 5",
-  "Client 6",
-  "Client 7",
-  "Client 8",
-  "Client 9",
-  "Client 10",
-];
 
 export default function Clients() {
   return (
@@ -30,14 +20,7 @@ export default function Clients() {
             pauseOnHover={false}
             className="flex items-center"
           >
-            {items.map((item, idx) => (
-              <span
-                key={idx}
-                className="text-xl font-medium px-12 whitespace-nowrap"
-              >
-                {item}
-              </span>
-            ))}
+            {testimonials.map((item) => <Image className="block border border-slate-300 dark:border-slate-700 mx-12 w-20 h-20 rounded-full" key={item.id} src={item.image} width={100} height={100} alt="Client Image" />)}
           </Marquee>
         </div>
       </Container>

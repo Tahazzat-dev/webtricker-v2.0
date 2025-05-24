@@ -12,36 +12,36 @@ export default function Portfolios() {
             <ParallaxImage
               containerStyle="w-full h-[400px] sm:h-[413px] sm:max-w-[600px]"
               href=""
-              src="https://liko.foxthemes.me/wp-content/uploads/2024/06/project-1-1.jpg"
+              src="/images/portfolios/bicycle.png"
               imgStyle=""
-              key="https://liko.foxthemes.me/wp-content/uploads/2024/06/project-1-1.jpg"
+              key="/images/portfolios/bicycle.png"
             />
           </div>
           <div className="flex w-full sm:w-[45%] 2xl:w-[47%] max-w-[750px] h-auto">
             <ParallaxImage
               containerStyle="w-full h-[400px] sm:h-[500px] md:h-[600px] 2xl:h-[764px] sm:max-w-[600px]"
               href=""
-              src="https://liko.foxthemes.me/wp-content/uploads/2024/06/project-1-4.jpg"
+              src="/images/portfolios/brilliant-glass.png"
               imgStyle=""
-              key="https://liko.foxthemes.me/wp-content/uploads/2024/06/project-1-4.jpg"
+              key="/images/portfolios/brilliant-glass.png"
             />
           </div>
           <div className="w-full sm:w-[45%] 2xl:w-[47%] flex justify-end max-w-[700px] h-auto">
             <ParallaxImage
               containerStyle="w-full h-[400px] sm:h-[500px] md:h-[550px] 2xl:h-[589px] sm:max-w-[447px]"
               href=""
-              src="https://liko.foxthemes.me/wp-content/uploads/2024/06/project-1-2.jpg"
+              src="/images/portfolios/bus-bank.png"
               imgStyle=""
-              key="https://liko.foxthemes.me/wp-content/uploads/2024/06/project-1-2.jpg"
+              key="/images/portfolios/bus-bank.png"
             />
           </div>
           <div className="w-full sm:w-[45%] 2xl:w-[47%] flex items-end justify-center max-w-[800px] h-auto">
             <ParallaxImage
               containerStyle="w-full h-[382px] sm:max-w-[318px]"
               href=""
-              src="https://liko.foxthemes.me/wp-content/uploads/2024/06/project-1-5.jpg"
+              src="/images/portfolios/clicky.png"
               imgStyle=""
-              key="https://liko.foxthemes.me/wp-content/uploads/2024/06/project-1-5.jpg"
+              key="/images/portfolios/clicky.png"
             />
           </div>
 
@@ -49,18 +49,18 @@ export default function Portfolios() {
             <ParallaxImage
               containerStyle="w-full h-[400px] sm:h-[500px] lg:h-[600px] 2xl:h-[752px] max-w-[596px]"
               href=""
-              src="https://liko.foxthemes.me/wp-content/uploads/2024/06/project-1-3.jpg"
+              src="/images/portfolios/legend-minning.png"
               imgStyle=""
-              key="https://liko.foxthemes.me/wp-content/uploads/2024/06/project-1-3.jpg"
+              key="/images/portfolios/legend-minning.png"
             />
           </div>
           <div className="sm:mt-10 md:mt-20 lg:mt-[80px] 2xl:mt-[160px] flex items-start 2xl:pt-20 justify-end w-full sm:w-[45%] 2xl:w-[47%] max-w-[800px] h-auto">
             <ParallaxImage
               containerStyle="w-full h-[382px] lg:h-[449px] max-w-[700px]"
               href=""
-              src="https://liko.foxthemes.me/wp-content/uploads/2024/06/project-1-6.jpg"
+              src="/images/portfolios/car-shoorom.png"
               imgStyle=""
-              key="https://liko.foxthemes.me/wp-content/uploads/2024/06/project-1-6.jpg"
+              key="/images/portfolios/car-shoorom.png"
             />
           </div>
           <div className="hidden sm:block w-full sm:w-[45%] 2xl:w-[47%] "></div>

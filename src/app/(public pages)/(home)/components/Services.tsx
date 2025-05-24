@@ -1,11 +1,13 @@
 "use client";
 import galleryModern from "@/app/fonts/gallery";
+import { services } from "@/data/services";
 import LinkButton from "@/sharedComponets/ui/buttons/LinkButton";
 import Container from "@/sharedComponets/ui/wrapper/Container";
+import { TService } from "@/types/data";
 import Image from "next/image";
 import React from "react";
 
-const ServiceCard = () => {
+const ServiceCard = ({ service }: { service: TService }) => {
   return (
     <div className="flex items-start gap-5 md:gap-6 lg:gap-8 2xl:gap-10">
       <Image
@@ -13,14 +15,13 @@ const ServiceCard = () => {
         height={66}
         className="h-auto"
         alt="Service icon"
-        src="https://liko.foxthemes.me/wp-content/uploads/2024/06/service-icon-1.png"
+        src={service.icon || ""}
       />
       <div className="grow">
-        <h6 className="heading font-semibold mb-1 uppercase">Web Development</h6>
-        <p>
-          Webtricker: crafting pixel-perfect websites with a symphony of ones
-          and zeros, a ballet of CSS, and a tango with JavaScript.
-        </p>
+        <h6 className="heading font-semibold mb-1 uppercase">
+          {service.title}
+        </h6>
+        <p>{service.excerpt}</p>
       </div>
     </div>
   );
@@ -51,10 +52,9 @@ export default function Services() {
 
           {/* services info */}
           <div className="w-full flex flex-col gap-8 lg:gap-10 2xl:gap-12">
-            <ServiceCard />
-            <ServiceCard />
-            <ServiceCard />
-            <ServiceCard />
+            {services.map((service) => (
+              <ServiceCard key={service.id} service={service} />
+            ))}
           </div>
         </div>
       </Container>

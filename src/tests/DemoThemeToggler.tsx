@@ -4,10 +4,9 @@ import { useTheme } from "@/provider/ThemeProvider";
 
 export default function DemoThemeToggler() {
    const {theme,toggleTheme} = useTheme()
-   console.log(theme)
   return (
     
-    <div className="rounded-full fixed right-5 md:right-7 lg:right-10 xl:right-[60px] bottom-2">
+    <div className="rounded-full fixed right-5 md:right-7 lg:right-10 xl:right-[60px] bottom-2 z-[999999999]">
         <button
         title="Demo Theme Toggler for development purpose"
       onClick={() => toggleTheme()}

@@ -50,7 +50,7 @@ export default function Banner() {
 
         <div className="w-full mt-5 sm:mt-10 lg:mt-14 2xl:mt-20 max-w-[600px] mx-auto">
                 <span className="hidden lg:inline-block float-left w-[95px] h-0.5 "></span>
-                <p className="text-center lg:text-left !leading-[140%]">Global digital design studio partnering with brands and businesses that create exceptional experiences. We are design and development agency based in Netherland.</p>
+                <p className="text-center lg:text-left !leading-[140%]">Webtricker designs, develops, and delivers high-quality, responsive websites with pixel-perfect precision. We’re passionate, detail-driven, and committed to exceeding expectations. Have a project in mind? Let’s talk.</p>
         </div>
       </Container>
     </div>

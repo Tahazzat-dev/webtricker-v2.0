@@ -4,8 +4,11 @@ import ScrollTrigger from "gsap/ScrollTrigger";
 import { services } from "@/data/services";
 import Image from "next/image";
 import Container from "@/sharedComponets/ui/wrapper/Container";
-import Link from "next/link";
-import { RightArrowLong } from "@/sharedComponets/ui/icons/Icons";
+import gsap from "gsap";
+
+// import Link from "next/link";
+// import { RightArrowLong } from "@/sharedComponets/ui/icons/Icons";
+gsap.registerPlugin(ScrollTrigger);
 
 export default function ServicesPanel() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -13,6 +16,7 @@ export default function ServicesPanel() {
 
   useEffect(() => {
     if (!containerRef.current || !endTrigger.current) return;
+    
     const pinnedPanels =
       containerRef.current?.querySelectorAll(".service-panel");
     pinnedPanels?.forEach((panel, i) => {
@@ -26,11 +30,13 @@ export default function ServicesPanel() {
         id: `${i + 1}`,
       });
 
+        ScrollTrigger.refresh();
+
       return () => {
         ScrollTrigger.getAll().forEach((t) => t.kill());
       };
     });
-  }, []);
+  }, [containerRef, endTrigger]);
 
   return (
     <section
@@ -41,7 +47,7 @@ export default function ServicesPanel() {
         <section
           key={item.id}
           style={{ zIndex: `${services.length + index}` }}
-          className={`service-panel !bg-slate-50 dark:!bg-slate-950 flex flex-col sm:flex-row w-full h-screen`}
+          className={`service-panel !bg-slate-50 dark:!bg-slate-950 flex flex-col sm:flex-row w-full min-h-screen`}
         >
           <div className="w-full sm:w-3/6 h-5/12 sm:h-full">
             <Image
@@ -73,14 +79,14 @@ export default function ServicesPanel() {
                   <></>
                 )}
 
-                <Link
+                {/* <Link
                   data-wt-hide-cursor
                   href="/"
                   className="flex items-center gap-3 group flex-nowrap"
                 >
                   <span className="whitespace-nowrap">See Details</span>{" "}
                   <RightArrowLong className="duration-300 group-hover:translate-x-2 scale-y-90" />
-                </Link>
+                </Link> */}
               </div>
             </Container>
           </div>

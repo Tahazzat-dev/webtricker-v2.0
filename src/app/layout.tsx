@@ -18,8 +18,40 @@ const syne = Syne({
 })
 
 export const metadata: Metadata = {
-  title: "Webtricker",
+  title: {
+    default:"Webtricker",
+    template: "%s | Webtricker",
+  },
   description: "Web Design and Development Agency",
+  twitter: {
+    card: "summary_large_image",
+    description: "webtricker web design and development agency",
+    images: [
+      {
+        alt: "webtricker web design and development agency",
+        url: "/opengraph-image.png",
+      },
+    ],
+  },
+
+  openGraph: {
+    images: [
+      {
+        alt: "webtricker web design and development agency",
+        url: "/opengraph-image.png",
+      },
+    ],
+  },
+  verification: {
+    google: "3yJ9kU21qPn-t-QHCQtsra9Rv8UoWS03zAEy4p1yf6Q",
+
+    other: {
+      "p:domain_verify": "501935585d9580c201185f324b691844",
+      "msvalidate.01": "89B449D5B4F0E16D64B67CF4D3CD9C7D",
+      "google-tag-manager": "GTM-T26D8442",
+      "google-analytics": "G-F53LQ46RXD",
+    },
+  },
 };
 
 export default function RootLayout({

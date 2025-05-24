@@ -27,6 +27,7 @@ export type TBlog = {
 }
 
 export type TService = {
+  icon?:string;
     title: string;
     description: string;
     excerpt: string;

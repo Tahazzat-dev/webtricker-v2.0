@@ -5,6 +5,18 @@ import Image from "next/image";
 import ContactCTABtns from "./components/ContactCTABtns";
 import { EmailIcon, MapPinIcon, PhoneIcon } from "./components/Icons";
 import Link from "next/link";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Contact",
+  description:
+    "Connect with us: Reach out to our responsive web design agency for inquiries and collaborations.",
+  // openGraph: {
+  //   title: "Talk to Us: Contact Webtricker Today",
+  //   description:
+  //     "Connect with us: Reach out to our responsive web design agency for inquiries and collaborations.",
+  // },
+};
 
 export default function ContactPage() {
   return (

@@ -1,7 +1,10 @@
 "use client";
+import { useSubmitContactFormMutation } from "@/redux/features/contact/contactApiSlice";
+import LoadingSpinner from "@/sharedComponets/ui/loading/LoadingSpinner";
 import React from "react";
 // import { GoogleReCaptcha } from "react-google-recaptcha-v3";
 import { useForm } from "react-hook-form";
+import { toast } from "react-toastify";
 
 type FormData = {
   name: string;
@@ -11,6 +14,8 @@ type FormData = {
 
 // ===== root component ======
 export default function ContactForm() {
+  // hooks
+  const [submitForm, { isLoading }] = useSubmitContactFormMutation();
   const {
     register,
     // setValue,
@@ -20,10 +25,20 @@ export default function ContactForm() {
   } = useForm<FormData>();
 
   //   handlers
-  const onSubmit = handleSubmit((data) => {
-    // reset the form
-    console.log(data);
-    reset()
+  const onSubmit = handleSubmit(async (data) => {
+    try {
+      const res = await submitForm(data).unwrap();
+      if (res.success) {
+        toast.success("Message sent successfully!");
+      } else {
+        toast.error("Failed to send message. Please try again later.");
+      }
+    } catch (error) {
+      toast.error("Failed to send message. Please try again later.");
+      console.error(error);
+    } finally {
+      reset();
+    }
   });
 
   return (
@@ -94,12 +109,17 @@ export default function ContactForm() {
       </div> */}
       <div className="w-full">
         <button
+          disabled={isLoading}
           data-wt-hide-cursor
           className="w-full cursor-hide btn-reverse-bg py-2 wt_fs-md px-2 rounded-[4px]"
         >
-          Send Message
+          {isLoading ? (
+            <LoadingSpinner className="w-6 h-6 mx-auto my-1" />
+          ) : (
+            <span>Send Message</span>
+          )}
         </button>
       </div>
     </form>
   );
-};
+}
