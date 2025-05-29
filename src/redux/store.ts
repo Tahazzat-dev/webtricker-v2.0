@@ -3,6 +3,7 @@ import ModalToggler from "./features/modalToggler/ModalTogglerSlice";
 import Modyfier from "./features/rootModyfier/Modyfier";
 import floatingText from "./features/dom/floatingDotSlice";
 import { contactApi } from "./features/contact/contactApiSlice";
+import { loginApi } from "./features/auth/LoginApiSlice";
 
 export const store = configureStore({
   reducer: {
@@ -16,9 +17,11 @@ export const store = configureStore({
 
     // api slices can be added here
     [contactApi.reducerPath]: contactApi.reducer,
+    [loginApi.reducerPath]: loginApi.reducer,
   },
   middleware: (getDefaultMiddleware) =>
-    getDefaultMiddleware().concat(contactApi.middleware),
+    getDefaultMiddleware().
+  concat(loginApi.middleware),
 });
 
 // Infer the `RootState` and `AppDispatch` types from the store itself

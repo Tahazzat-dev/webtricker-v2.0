@@ -2,10 +2,10 @@
 import React from "react";
 import Container from "../wrapper/Container";
 import Image from "next/image";
-import webtrickerW from "@/assets/images/home/webtricker-w.png";
 import Link from "next/link";
 import NewsLetterForm from "./NewsLetterForm";
 import BouncingText from "../effects/BouncingText";
+import SiteLogoLong from "../logos/SiteLogoLong";
 // import galleryModern from "@/app/fonts/gallery";
 
 export default function Footer() {
@@ -15,14 +15,7 @@ export default function Footer() {
         <Container className="flex justify-between flex-wrap gap-10 md:gap-16 lg:gap-10 2xl:gap-24">
           <div className="w-full max-w-[500px] md:max-w-[45%] 2xl:max-w-[450px] md:mt-[-4px]">
             <Link className="flex items-center gap-1 bold" href="/">
-              <Image
-                className="inline w-14"
-                src={webtrickerW}
-                width={50}
-                height={50}
-                alt="Site logo"
-              />
-              <h5>Webtricker</h5>
+              <SiteLogoLong />
             </Link>
             <p className="mt-3 wt_fs-md">
               Looking for a reliable digital partner? We provide end-to-end
