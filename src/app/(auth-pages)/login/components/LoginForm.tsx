@@ -42,6 +42,7 @@ export default function LoginForm() {
   const onSubmit = handleSubmit(async (data) => {
     try {
       const res = await submitForm(data).unwrap();
+      console.log(res)
       if (!res?.success) {
         throw {
           status: 400,
@@ -54,6 +55,7 @@ export default function LoginForm() {
       // Redirect to admin dashboard
       router.push("/settings");
     } catch (error: any) {
+      console.log(error);
       setError("password", {
         type: "manual",
         message: error?.data?.message || "Login failed",
