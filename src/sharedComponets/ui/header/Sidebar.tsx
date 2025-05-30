@@ -11,11 +11,14 @@ import Image from "next/image";
 import webtrickerW from "@/assets/images/home/webtricker-w.png";
 import Link from "next/link";
 import { navLinks } from "@/data/navLinks";
+import LoadingSpinner from "../loading/LoadingSpinner";
 
 export default function Sidebar() {
   const dispatch = useDispatch();
   const EXPAND = useSelector((state: RootState) => state.modyfier.EXPAND);
-
+  const { isLoading, isError, smallLogo } = useSelector(
+    (state: RootState) => state.siteLogo
+  );
   //   hanlders
   const handleClose = () => {
     dispatch(SET_EXPAND(null));
@@ -45,15 +48,20 @@ export default function Sidebar() {
         }`}
       >
         <div className="w-full pb-5 flex items-center justify-between px-4 md:px-5  lg:px-8 xl:px-9">
-         <Link href="/">
-          <Image
-           onClick={handleClose}
-            className="inline w-14"
-            src={webtrickerW}
-            width={50}
-            height={50}
-            alt="Site logo"
-          /></Link>
+          <Link href="/">
+            {isLoading ? (
+              <LoadingSpinner className="w-5 h-5" />
+            ) : (
+              <Image
+                onClick={handleClose}
+                className="inline w-14"
+                src={isError ? webtrickerW : smallLogo}
+                width={50}
+                height={50}
+                alt="Site logo"
+              />
+            )}
+          </Link>
           <button
             onClick={handleClose}
             className="duration-300 hover:rotate-90 text-black dark:text-white"
@@ -68,7 +76,9 @@ export default function Sidebar() {
           className="sidebar_scrollable_container grow w-full overflow-y-auto px-4 md:px-5 lg:px-8 xl:px-9"
         >
           <div className="w-full mt-10 lg:mt-16">
-            <h5 className="heading font-semibold text-center lg:text-start">Hello There!</h5>
+            <h5 className="heading font-semibold text-center lg:text-start">
+              Hello There!
+            </h5>
             <p className="mt-2 text-center lg:text-start">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit,
             </p>
@@ -133,10 +143,10 @@ export default function Sidebar() {
 
           {/* social links */}
           <div className="w-full flex flex-col  gap-3 mt-14 lg:mt-20">
-            <h6 className="heading uppercase mb-1 text-center lg:text-start">FOLLOW US</h6>
-            <div className="w-full flex gap-4">
-
-            </div>
+            <h6 className="heading uppercase mb-1 text-center lg:text-start">
+              FOLLOW US
+            </h6>
+            <div className="w-full flex gap-4"></div>
           </div>
         </div>
       </div>

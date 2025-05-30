@@ -115,3 +115,24 @@ export default function Shotcut() {
                   //       socket.off("joinRequestSent", () => {});
                   //     };
                   //   }, [socket]);
+
+
+                      // authenticate user
+                      // try {
+                      // await dbConnect();
+                      //     await verifyAdmin(req);
+                      // } catch (error) {
+                      //     return NextResponse.json({ success: false, message: (error as Error).message }, { status: 401 });
+                      // }
+
+
+
+
+
+
+                      /*
+                      urls 
+                      https://res.cloudinary.com/dirjayri8/image/upload/v1748526122/zfmkx1ssrfbtsiibeeze.png
+                      https://res.cloudinary.com/dirjayri8/raw/upload/v1748532597/k0tyb0wshuc3ei0oqvae.svg
+                      https://res.cloudinary.com/dirjayri8/raw/upload/v1748532597/r2rg0cgdr3xa8e8bctbw.svg
+                      */ 

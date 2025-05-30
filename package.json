@@ -13,6 +13,7 @@
     "@studio-freight/lenis": "^1.0.42",
     "bcrypt": "^6.0.0",
     "cloudinary": "^2.6.1",
+    "formidable": "^3.5.4",
     "gsap": "^3.13.0",
     "jsonwebtoken": "^9.0.2",
     "jwt-decode": "^4.0.0",

@@ -4,6 +4,9 @@ import Modyfier from "./features/rootModyfier/Modyfier";
 import floatingText from "./features/dom/floatingDotSlice";
 import { contactApi } from "./features/contact/contactApiSlice";
 import { loginApi } from "./features/auth/LoginApiSlice";
+import { logosApi } from "./features/logos/logosApiSlice";
+import siteLogo from "./features/logos/siteLogoSlice";
+import { uploadApi } from "./features/upload/uploadApiSlice";
 
 export const store = configureStore({
   reducer: {
@@ -15,13 +18,20 @@ export const store = configureStore({
     // modal show/hide slice
     modalToggler: ModalToggler,
 
+    // site logo
+    siteLogo:siteLogo.reducer,
+
     // api slices can be added here
     [contactApi.reducerPath]: contactApi.reducer,
-    [loginApi.reducerPath]: loginApi.reducer,
+    [loginApi.reducerPath]:loginApi.reducer,
+    [logosApi.reducerPath]:logosApi.reducer,
+    [uploadApi.reducerPath]:uploadApi.reducer,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware().
-  concat(loginApi.middleware),
+  concat(loginApi.middleware).
+  concat(logosApi.middleware).
+  concat(uploadApi.middleware)
 });
 
 // Infer the `RootState` and `AppDispatch` types from the store itself

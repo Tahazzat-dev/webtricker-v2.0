@@ -29,6 +29,7 @@ export async function middleware(request: NextRequest) {
 
   const cookieStore = await cookies();
   const accessToken = cookieStore.get('accessToken')?.value;
+  console.log(accessToken, ' accessToken from middleware')
 
   const loginURL = request.nextUrl.clone();
   loginURL.pathname = '/login';

@@ -14,11 +14,8 @@ export const navLinks: TLink[] = [
 
 
 export const settingsLinks: TLink[] = [
-  {
-    label: "Logos",
-    href: "/settings/logos"
-  },
-
+  {label: "Logos",href: "/settings/logos"},
+  {label: "Menu",href: "/settings/menu"},
   { label: "Home", href: "/settings/home" },
   { label: "About", href: "/settings/about" },
   { label: "Services", href: "/settings/services" },
